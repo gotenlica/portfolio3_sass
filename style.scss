@@ -1,0 +1,166 @@
+@import 'nav-bar';
+@import "media-queries";
+@import "container2";
+@import "container3";
+
+*{
+
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+
+    background-color: rgb(214, 208, 208);
+}
+.main_container{
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+
+
+#container1{
+    position: absolute;
+    height: 550px;
+    width: 350px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 6px -6px 2px rgb(100, 96, 96);
+    border-radius: 20px;
+    animation-duration: 1.8s;
+    overflow: hidden;
+    backface-visibility: hidden;
+  
+   h1{
+       font-size: 35px;
+       padding-bottom: 30px;
+       color: rgb(238, 94, 11);
+       z-index: 2;
+   }
+   p{
+    color: black;
+    z-index: 2; 
+    letter-spacing: 1.2px;
+    padding-bottom: 30px;
+   }
+
+   img{
+       margin:15px 5px;
+       height: 150px;
+       width: 300px;
+       z-index: 2;
+       border-radius: 20px;
+       
+   }
+    
+
+   
+    &::before{
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 120%;
+    background: rgb(238, 94, 11);
+    animation: border-light 10s linear infinite;
+
+}
+
+&::after{
+    content: '';
+    position: absolute;
+    background: rgb(196, 192, 192);
+    inset: .8px;
+    border-radius: 20px;
+   
+}
+
+
+
+
+
+@keyframes animate{
+    0%
+    {
+        width: 0;
+    }
+    70%
+    {
+        width: 100%;
+    }
+    
+}   
+
+@keyframes border-light {
+    
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+    }
+
+
+
+
+}
+
+//keyframes animations//
+
+@keyframes flip {
+        
+    from{
+        transform: translate(0);
+       
+    }
+    to{
+      
+     
+        transform: 
+       
+        rotateY(180deg)
+        scale(1.2);
+       
+        }
+    }
+    
+        @keyframes flipback {
+            
+            from{
+    transform: 
+    translate(392px)
+    rotateX(30deg)
+    translateY(10px)
+    scale(1.2);
+                 
+            }
+            to{
+               transform: translate(0);
+        
+               
+            }
+                
+        }
+    
+
+@include phone{
+
+    .main-container{
+     
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+}
+}
+}

@@ -1,0 +1,235 @@
+@import "media-queries";
+
+
+#container3{
+position: absolute;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 500px;
+width: 270px;
+z-index: -2;
+padding: 15px;
+box-shadow:  6px -6px 2px rgb(100, 96, 96);
+border-radius: 20px;
+overflow: hidden;
+animation-duration: 1.8s;
+animation-timing-function: linear;
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
+backface-visibility: hidden;
+  
+
+
+
+.projects-grid{
+height: 80%;
+width: 100%;
+display: grid;
+gap: .3em;
+grid-template-columns: repeat(2, 1fr);
+align-content: center;
+z-index: 2;
+
+
+    div{
+        height: 150px;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center ;
+    
+        
+    }
+
+.one{
+    background: yellow;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.two{
+    background: blue;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.three{
+    background: green;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.four{
+    background: tomato;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+}
+h2{
+    z-index: 1;
+    color: rgb(238, 94, 11);
+    font-size: 35px;
+}
+p{
+    z-index: 1;
+    color: white;
+}
+      &::before{
+        content: '';
+        position: absolute;
+        width: 180px;
+        height: 120%;
+        background: rgb(238, 94, 11);
+        animation: border-light 10s linear infinite;
+    
+    }
+    
+    &::after{
+        content: '';
+    position: absolute;
+    background: rgb(196, 192, 192);
+    inset: 1px;
+    border-radius: 20px;
+    
+    }
+
+
+
+// keyframes border-light.
+
+@keyframes border-light {
+    
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+    }
+
+// keyframes card-move.
+
+
+    @keyframes container {
+        
+from{
+    transform: translate(0);
+  
+}
+to{
+    z-index: 0;
+    transform: 
+    translate(-392px)
+    rotateX(30deg)
+    translateY(10px)
+    scale(1.2);
+    }
+}
+
+    @keyframes containerback{
+        
+        from{
+            transform: 
+            translate(-392px)
+            rotateX(30deg)
+            translateY(10px)
+            scale(1.2);
+        }
+        to{
+           transform: translate(0);
+    
+           
+        }
+            
+    }
+
+   
+
+}
+
+ //Responsive code.
+
+ @include laptop{
+
+    height: 500px;
+    width: 280px;
+    
+    
+
+    @keyframes container {
+    
+        from{
+        transform: translate(0);
+        
+        }
+        to{
+        z-index: -4;
+        transform: 
+        translate(-330px)
+        rotateX(25deg)
+        translateY(300px)
+        scale(1.1);
+        }
+        }
+        
+        @keyframes containerback{
+        
+        from{
+        transform: 
+        translate(-330px)
+        rotateX(25deg)
+        translateY(300px)
+        scale(1.1);
+        
+        }
+        to{
+        transform: translate(0);
+        
+        }
+        
+        }
+
+
+    }
+
+    @include table{
+
+
+        @keyframes container {
+    
+            from{
+            transform: translate(0);
+            
+            }
+            to{
+            z-index: 4;
+            transform: 
+            translate(0)
+            rotateX(360deg)
+            scale(1.3);
+            }
+            }
+            
+            @keyframes containerback{
+            
+            from{
+            transform: 
+            translate(0)
+            rotateX(360deg)
+            scale(1.2);
+            
+            }
+            to{
+            transform: translate(0);
+            
+            }
+            
+            }
+    
+
+        
+    }
+    
+  
